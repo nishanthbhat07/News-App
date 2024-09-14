@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     fontFamily: FONTS.bold,
     fontSize: 32,
     fontWeight: "bold",
-    lineHeight: 32,
+    lineHeight: 24,
   },
 });
 

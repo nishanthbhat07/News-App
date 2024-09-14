@@ -1,13 +1,8 @@
 import React from "react";
-import ThemedView from "../../components/common/themed-view";
-import ThemedText from "../../components/common/themed-text";
+import NewsFeed from "../../screens/news-feed";
 
 const NewsApp = () => {
-  return (
-    <ThemedView>
-      <ThemedText>Here</ThemedText>
-    </ThemedView>
-  );
+  return <NewsFeed />;
 };
 
 export default NewsApp;

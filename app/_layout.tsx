@@ -10,7 +10,7 @@ import * as SplashScreen from "expo-splash-screen";
 import React, { useEffect } from "react";
 import "react-native-reanimated";
 
-import { StyleSheet } from "react-native";
+import { LogBox, StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { useColorScheme } from "../hooks/useColorScheme";
@@ -25,6 +25,8 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 });
+
+LogBox.ignoreAllLogs();
 
 const queryClient = new QueryClient();
 

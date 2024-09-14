@@ -22,4 +22,6 @@ export const COLORS = {
   black: "#000",
   grey: "#EAEAEA",
   shadow: "rgba(0, 0, 0, 0.5)",
+  fadedGrey: "#808080",
+  mediumGray: "#818181",
 };
