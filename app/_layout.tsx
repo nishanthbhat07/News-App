@@ -5,7 +5,11 @@ import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
 
+
 import { useColorScheme } from '@/hooks/useColorScheme';
+import { StyleSheet } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { COLORS } from '@/constants/Colors';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -13,7 +17,10 @@ SplashScreen.preventAutoHideAsync();
 export default function RootLayout() {
   const colorScheme = useColorScheme();
   const [loaded] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
+    "Satoshi-Regular": require('../assets/fonts/Satoshi-Regular.otf'),
+    "Satoshi-Medium": require('../assets/fonts/Satoshi-Medium.otf'),
+    "Satoshi-Bold": require('../assets/fonts/Satoshi-Bold.otf'),
+    "Satoshi-Italic": require('../assets/fonts/Satoshi-Italic.otf'),
   });
 
   useEffect(() => {
@@ -27,11 +34,21 @@ export default function RootLayout() {
   }
 
   return (
+    <SafeAreaView style={styles.container}>
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="(news)" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />
       </Stack>
     </ThemeProvider>
+    </SafeAreaView>
   );
 }
+
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: COLORS.white,
+    flex: 1,
+  },
+});
