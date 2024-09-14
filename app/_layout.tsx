@@ -12,6 +12,7 @@ import "react-native-reanimated";
 
 import { StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { QueryClient, QueryClientProvider } from "react-query";
 import { useColorScheme } from "../hooks/useColorScheme";
 import { COLORS } from "../constants/Colors";
 
@@ -24,6 +25,8 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 });
+
+const queryClient = new QueryClient();
 
 export default function RootLayout() {
   const colorScheme = useColorScheme();
@@ -46,12 +49,16 @@ export default function RootLayout() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-        <Stack>
-          <Stack.Screen name="(news)" options={{ headerShown: false }} />
-          <Stack.Screen name="+not-found" />
-        </Stack>
-      </ThemeProvider>
+      <QueryClientProvider client={queryClient}>
+        <ThemeProvider
+          value={colorScheme === "dark" ? DarkTheme : DefaultTheme}
+        >
+          <Stack>
+            <Stack.Screen name="(news)" options={{ headerShown: false }} />
+            <Stack.Screen name="+not-found" />
+          </Stack>
+        </ThemeProvider>
+      </QueryClientProvider>
     </SafeAreaView>
   );
 }
