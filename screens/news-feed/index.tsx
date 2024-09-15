@@ -18,11 +18,9 @@ const NewsFeed = () => {
   const { newsFeed, loadMoreArticles, isLoading, fetchNextBatch } =
     useNewsFeedWithPagination();
   const [articles, setArticles] = useState(newsFeed);
-
   const [openSwipeableIndex, setOpenSwipeableIndex] = useState<number | null>(
     null,
   );
-
   const swipeableRefs = useRef<SwipeableMethods[]>([]);
 
   const closeOpenSwipeable = () => {

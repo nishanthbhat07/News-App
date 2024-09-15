@@ -35,13 +35,14 @@ export const useNewsFeed = (page: number) => {
     isLoading,
     refetch,
     totalResults,
+    setNewsFeed,
   };
 };
 
 export const useNewsFeedWithPagination = () => {
   const [displayedArticles, setDisplayedArticles] = useState<Article[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const { newsFeed, refetch, totalResults, isLoading } =
+  const { newsFeed, refetch, totalResults, isLoading, setNewsFeed } =
     useNewsFeed(currentPage);
 
   const fetchNextBatch = useCallback(() => {
@@ -76,5 +77,6 @@ export const useNewsFeedWithPagination = () => {
     loadMoreArticles,
     fetchNextBatch,
     isLoading,
+    setNewsFeed,
   };
 };
