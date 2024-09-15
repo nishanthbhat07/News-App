@@ -103,6 +103,12 @@ A React Native application for displaying news articles using Expo.
    screens/news-feed/api.ts
    ```
 
+## Demo
+- [IOS](https://drive.google.com/file/d/1JmfuxBjMdwM13V9BqZAXe7VePhVUNVv5/view?usp=sharing)
+- [Android](https://drive.google.com/file/d/12krY_EUyPjF5H75mjnI0T2DqfLRPULC7/view?usp=sharing)
+- [Android APK](https://drive.google.com/file/d/13AALL_0SV4gqjgTQ-vnXEWaLVG_wfE_0/view?usp=sharing)
+
+
 ## Contributing
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
