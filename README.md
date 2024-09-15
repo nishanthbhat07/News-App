@@ -36,23 +36,21 @@ A React Native application for displaying news articles using Expo.
 
 1. News Feed: Displays a list of news articles with images, titles, and publication details.
 2. Infinite Scroll: Loads more articles as the user scrolls down the list.
-3. Pull to Refresh: Allows users to refresh the news feed by pulling down the list.
-4. Article Pinning: Users can pin articles to the top of the list by swiping left to right.
-5. Article Deletion: Users can delete articles from the list by swiping right to left.
-6. Swipe Actions:
+3. Article Pinning: Users can pin articles to the top of the list by swiping left to right.
+4. Article Deletion: Users can delete articles from the list by swiping right to left.
+5. Swipe Actions:
    - Left to Right: Pin article to top
    - Right to Left: Delete article
-7. Responsive Design: Adapts to different screen sizes and orientations.
+6. Responsive Design: Adapts to different screen sizes and orientations.
 
 ## Assumptions
 
 1. API: The project assumes the use of a news API (likely NewsAPI) for fetching articles.
 2. Authentication: No user authentication is implemented; it's assumed to be a public news feed.
 3. Data Persistence: Article pinning and deletion are not persisted across app restarts.
-4. Error Handling: Basic error handling is implemented, but comprehensive error states are not fully developed.
-5. Performance: The app is optimized for performance with features like memo and useCallback, assuming a potentially large number of articles.
-6. Styling: The app uses a custom theming system, assuming potential future dark mode support.
-7. Platform: While cross-platform, the app is primarily designed for mobile devices (iOS and Android).
+4. Performance: The app is optimized for performance with features like memo and useCallback, assuming a potentially large number of articles.
+5. Styling: The app uses a custom theming system, assuming potential future dark mode support.
+6. Platform: While cross-platform, the app is primarily designed for mobile devices (iOS and Android).
 
 ## Key Packages
 
