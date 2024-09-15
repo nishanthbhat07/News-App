@@ -51,6 +51,7 @@ A React Native application for displaying news articles using Expo.
 4. Performance: The app is optimized for performance with features like memo and useCallback, assuming a potentially large number of articles.
 5. Styling: The app uses a custom theming system, assuming potential future dark mode support.
 6. Platform: While cross-platform, the app is primarily designed for mobile devices (iOS and Android).
+7. Pagination: The batch size mentioned in the assignment is 100 but it's reduced to 50 because the NewsAPI allows only 100 batch size in developer plan. Hence when the user clicks on the refresh button, on the top side, it'll fetch next 50 news instead of 100. But that button will only fetch upto 100 total results as per current plan.
 
 ## Key Packages
 
