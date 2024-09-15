@@ -105,7 +105,7 @@ A React Native application for displaying news articles using Expo.
 ## Demo
 - [IOS](https://drive.google.com/file/d/1JmfuxBjMdwM13V9BqZAXe7VePhVUNVv5/view?usp=sharing)
 - [Android](https://drive.google.com/file/d/12krY_EUyPjF5H75mjnI0T2DqfLRPULC7/view?usp=sharing)
-- [Android APK](https://drive.google.com/file/d/13AALL_0SV4gqjgTQ-vnXEWaLVG_wfE_0/view?usp=sharing)
+- [Android APK](https://drive.google.com/file/d/1582l1P-UO3VXZJTBxRJm6JhGfs7ON_bU/view?usp=sharing)
 
 
 ## Contributing
