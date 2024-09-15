@@ -1,12 +1,15 @@
 import React, { memo } from "react";
 import dayjs from "dayjs";
 import { Image } from "expo-image";
+import { AntDesign } from "@expo/vector-icons";
 import styles from "./styles";
 import ThemedText from "../common/themed-text";
 import { Article } from "../../types/api";
 import ThemedView from "../common/themed-view";
 import { COLORS } from "../../constants/Colors";
 import { toTitleCase } from "../../screens/news-feed/utils";
+
+const PinnedText = "Pinned on top";
 
 const NewsCard: React.FC<{ item: Article }> = ({ item }) => {
   const {
@@ -15,9 +18,23 @@ const NewsCard: React.FC<{ item: Article }> = ({ item }) => {
     urlToImage = "",
     publishedAt,
     author,
+    isPinned,
   } = item || {};
   return (
     <ThemedView style={styles.container}>
+      {!!isPinned && (
+        <ThemedView style={styles.pinnedContainer}>
+          <AntDesign
+            name="pushpino"
+            size={12}
+            color={COLORS.fadedGrey}
+            style={styles.pinIcon}
+          />
+          <ThemedText color={COLORS.fadedGrey} size={14}>
+            {PinnedText}
+          </ThemedText>
+        </ThemedView>
+      )}
       <ThemedView style={styles.header}>
         <ThemedText color={COLORS.fadedGrey} size={14}>
           {name}

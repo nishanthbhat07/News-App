@@ -15,7 +15,7 @@ export const getNewsFeed = async ({ page }: { page: number }) => {
           from: dayjs().subtract(10, "day").format("YYYY-MM-DD"),
           sortBy: "publishedAt",
           apiKey: API_KEY as string,
-          pageSize: 100,
+          pageSize: 50,
           page,
         },
       },

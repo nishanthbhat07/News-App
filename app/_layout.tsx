@@ -13,6 +13,7 @@ import "react-native-reanimated";
 import { LogBox, StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { useColorScheme } from "../hooks/useColorScheme";
 import { COLORS } from "../constants/Colors";
 
@@ -24,6 +25,7 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.white,
     flex: 1,
   },
+  root: { flex: 1 },
 });
 
 LogBox.ignoreAllLogs();
@@ -51,16 +53,18 @@ export default function RootLayout() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <QueryClientProvider client={queryClient}>
-        <ThemeProvider
-          value={colorScheme === "dark" ? DarkTheme : DefaultTheme}
-        >
-          <Stack>
-            <Stack.Screen name="(news)" options={{ headerShown: false }} />
-            <Stack.Screen name="+not-found" />
-          </Stack>
-        </ThemeProvider>
-      </QueryClientProvider>
+      <GestureHandlerRootView style={styles.root}>
+        <QueryClientProvider client={queryClient}>
+          <ThemeProvider
+            value={colorScheme === "dark" ? DarkTheme : DefaultTheme}
+          >
+            <Stack>
+              <Stack.Screen name="(news)" options={{ headerShown: false }} />
+              <Stack.Screen name="+not-found" />
+            </Stack>
+          </ThemeProvider>
+        </QueryClientProvider>
+      </GestureHandlerRootView>
     </SafeAreaView>
   );
 }

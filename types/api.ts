@@ -12,6 +12,7 @@ export interface Article {
   urlToImage: string;
   publishedAt: string;
   content: string;
+  isPinned?: boolean;
 }
 
 export interface INewsFeedResponse {

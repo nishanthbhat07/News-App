@@ -28,3 +28,9 @@ export interface LineSeparatorProps {
   thickness?: number;
   margin?: number;
 }
+
+export interface SideActionsProps {
+  onPinPress?: () => void;
+  showDeleteIcon?: boolean;
+  onDeletePress?: () => void;
+}

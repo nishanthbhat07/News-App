@@ -12,12 +12,25 @@ export default StyleSheet.create({
   header: {
     flexDirection: "row",
     justifyContent: "space-between",
-    marginVertical: 10,
+    marginBottom: 10,
   },
   image: {
     borderRadius: 10,
     height: 80,
     width: 80,
+  },
+  pinIcon: {
+    transform: [
+      {
+        rotate: "90deg",
+      },
+    ],
+  },
+  pinnedContainer: {
+    alignItems: "center",
+    flexDirection: "row",
+    gap: 5,
+    marginBottom: 5,
   },
   title: {
     flexShrink: 1,

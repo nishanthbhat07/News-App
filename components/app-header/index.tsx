@@ -7,7 +7,7 @@ import styles from "./styles";
 import { COLORS } from "../../constants/Colors";
 import Touchable from "../common/touchable";
 
-const AppHeader = () => {
+const AppHeader: React.FC<{ onPress: () => void }> = ({ onPress }) => {
   return (
     <ThemedView style={styles.container}>
       <Image
@@ -15,7 +15,7 @@ const AppHeader = () => {
         style={styles.brandLogo}
         contentFit="cover"
       />
-      <Touchable>
+      <Touchable onPress={onPress}>
         <MaterialIcons
           name="sync"
           size={30}

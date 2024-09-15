@@ -3,12 +3,19 @@ import { useCallback, useEffect, useState } from "react";
 import { getNewsFeed } from "./api";
 import { useStorage } from "../../hooks/useMMKVStorage";
 import { Article } from "../../types/api";
+import { MMKV_KEYS } from "../../constants/mmkv-keys";
 
 const PAGE_SIZE = 10;
 
 export const useNewsFeed = (page: number) => {
-  const [newsFeed, setNewsFeed] = useStorage<Article[]>("newsFeed", []);
-  const [totalResults, setTotalResults] = useStorage<number>("totalResults", 0);
+  const [newsFeed, setNewsFeed] = useStorage<Article[]>(
+    MMKV_KEYS.NEWS_FEED,
+    [],
+  );
+  const [totalResults, setTotalResults] = useStorage<number>(
+    MMKV_KEYS.TOTAL_RESULTS,
+    0,
+  );
 
   const { isLoading, refetch } = useQuery(
     ["news-feed", page],
