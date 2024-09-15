@@ -6,7 +6,7 @@ A React Native application for displaying news articles using Expo.
 
 1. Clone the repository:
    ```
-   git clone <repository-url>
+   git clone https://github.com/nishanthbhat07/News-App.git
    cd news_app
    ```
 
@@ -54,6 +54,29 @@ A React Native application for displaying news articles using Expo.
 6. Styling: The app uses a custom theming system, assuming potential future dark mode support.
 7. Platform: While cross-platform, the app is primarily designed for mobile devices (iOS and Android).
 
+## Key Packages
+
+1. React Query: Used for fetching and managing news article data.
+   - Benefits:
+     - Efficient caching of news articles
+     - Easy implementation of infinite scroll for the news feed
+     - Automatic background refetching for fresh content
+
+2. MMKV: Utilized for storing pinned articles and user preferences.
+   - Benefits:
+     - Fast, synchronous operations for smooth user experience
+     - Persistent storage of pinned articles across app restarts
+
+3. Reanimated: Powers smooth animations for swipe actions and transitions.
+   - Benefits:
+     - Fluid, native-driven animations for article swiping
+     - Improved performance for list item animations
+
+4. Gesture Handler: Manages swipe gestures for article pinning and deletion.
+   - Benefits:
+     - Responsive and intuitive swipe interactions
+     - Seamless integration with Reanimated for gesture-driven animations
+
 ## Project Structure
 
 - `app/`: Contains the main application code and routing.
@@ -66,21 +89,18 @@ A React Native application for displaying news articles using Expo.
 ## Key Components
 
 1. NewsFeed: Main component for displaying the list of articles.
-   ```typescript:screens/news-feed/index.tsx
-   startLine: 1
-   endLine: 141
+   ```typescript
+   screens/news-feed/index.tsx
    ```
 
 2. NewsCard: Component for rendering individual news articles.
-   ```typescript:components/news-card/index.tsx
-   startLine: 1
-   endLine: 69
+   ```typescript:
+   components/news-card/index.tsx
    ```
 
 3. API Integration: Handles fetching news data from the API.
-   ```typescript:screens/news-feed/api.ts
-   startLine: 1
-   endLine: 29
+   ```typescript
+   screens/news-feed/api.ts
    ```
 
 ## Contributing
