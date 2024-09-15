@@ -68,6 +68,8 @@ export const useNewsFeedWithPagination = () => {
     if (nextArticles.length > 0 && totalResults > newsFeed.length) {
       setDisplayedArticles((prev) => [...prev, ...nextArticles]);
       setCurrentPage((prev) => prev + 1);
+    } else {
+      fetchNextBatch();
     }
   }, [newsFeed, currentPage]);
 
