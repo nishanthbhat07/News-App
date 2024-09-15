@@ -11,11 +11,11 @@ export const getNewsFeed = async ({ page }: { page: number }) => {
       API_BASE_URL as string,
       {
         params: {
-          q: "tesla",
-          from: dayjs().subtract(1, "day").format("YYYY-MM-DD"),
+          q: "apple",
+          from: dayjs().subtract(10, "day").format("YYYY-MM-DD"),
           sortBy: "publishedAt",
           apiKey: API_KEY as string,
-          pageSize: 10,
+          pageSize: 100,
           page,
         },
       },

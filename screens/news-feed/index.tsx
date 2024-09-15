@@ -1,18 +1,27 @@
-import { View, Text, FlatList } from "react-native";
+import { View, FlatList, ActivityIndicator } from "react-native";
 import React, { useCallback } from "react";
 import styles from "./styles";
-import { useNewsFeed } from "./hooks";
+import { useNewsFeedWithPagination } from "./hooks";
 import NewsCard from "../../components/news-card";
 import LineSeparator from "../../components/common/line-separator";
 import { COLORS } from "../../constants/Colors";
+import ThemedView from "../../components/common/themed-view";
 
 const NewsFeed = () => {
-  const { newsFeed, handleFetchNextPage, isFetchingNextPage } = useNewsFeed();
+  const { newsFeed, loadMoreArticles, isLoading } = useNewsFeedWithPagination();
 
   const ItemSeparator = useCallback(
     () => <LineSeparator color={COLORS.grey} thickness={1} />,
     [],
   );
+
+  if (isLoading) {
+    return (
+      <ThemedView style={styles.loadingContainer}>
+        <ActivityIndicator size="large" color={COLORS.grey} />
+      </ThemedView>
+    );
+  }
   return (
     <View style={styles.container}>
       <FlatList
@@ -22,9 +31,8 @@ const NewsFeed = () => {
           `${item.title}_${item.author}_${item.publishedAt}_${index}`
         }
         renderItem={({ item }) => <NewsCard item={item} />}
-        onEndReached={handleFetchNextPage}
+        onEndReached={loadMoreArticles}
         onEndReachedThreshold={0.5}
-        ListFooterComponent={<Text>{isFetchingNextPage && "Loading..."}</Text>}
         ItemSeparatorComponent={ItemSeparator}
       />
     </View>

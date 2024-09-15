@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import dayjs from "dayjs";
 import { Image } from "expo-image";
 import styles from "./styles";
@@ -36,7 +36,11 @@ const NewsCard: React.FC<{ item: Article }> = ({ item }) => {
         >
           {title}
         </ThemedText>
-        <Image source={{ uri: urlToImage }} style={styles.image} />
+        <Image
+          transition={800}
+          source={{ uri: urlToImage }}
+          style={styles.image}
+        />
       </ThemedView>
       <ThemedText color={COLORS.mediumGray} size={12}>
         {toTitleCase(author || "")}
@@ -45,4 +49,4 @@ const NewsCard: React.FC<{ item: Article }> = ({ item }) => {
   );
 };
 
-export default NewsCard;
+export default memo(NewsCard);
